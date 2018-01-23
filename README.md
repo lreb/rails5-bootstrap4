@@ -29,7 +29,8 @@ rails g controller Welcome index
 rails g controller User new create
 rails g controller Session new create destroy
 
-
+rails g scaffold Documentation name description version:float
+rails g scaffold Structure parent:reference name 
 
 
 sources
