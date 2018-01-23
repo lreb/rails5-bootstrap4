@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenWikidoc</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+
+	  <ul class="nav justify-content-end">
+		  <li class="nav-item">
+		    <%= link_to "Home", root_path, :class => 'nav-link'  %>
+		  </li>
+		  
+		  
+		  <% if current_user %>
+		  		<li class="nav-item">
+		    <%= link_to "Logout", '/logout', :class => 'nav-link'  %>
+		  </li>
+			  <!--Signed in as--> <%#= current_user.name %>  
+			<% else %>
+				<li class="nav-item">
+		    		<%= link_to 'Login', '/login', :class => 'nav-link'  %>
+		  		</li>
+			  	<li class="nav-item">
+		    		<%= link_to 'Signup', '/signup', :class => 'nav-link' %>
+		  		</li>
+			<% end %>
+
+		  
+		</ul>
+	
+
+    <%= yield %>
+  </body>
+
+
+</html>
